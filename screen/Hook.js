@@ -3,13 +3,12 @@ import {
   Text,
   View,
   TextInput,
-  TouchableOpacity,
 } from "react-native";
 import { saveLbs,getLbs, saveFt, saveInc, getFt ,getInc} from "../services/localservice";
 import Colors from "../constant/Colors"
 import String from "../constant/String"
 import Styles from "../constant/Styles"
-import Button from "../component.js/Button";
+import Button from "../component/Button";
 
 export default function Hook() {
 const [lbs, setLbs] = useState("");
@@ -91,9 +90,6 @@ onChangeText={(text) => setInc(text)}
 <Button btnDesign={Styles.metricbtn} click={()=> onMetric()} text={String.Metric} />
 </View>
 <Button btnDesign={Styles.loginBtn} click={()=>saveValue()} text={String.Save} />
-<TouchableOpacity>
-<Text style={Styles.restText}>{String.Reset}</Text>
-</TouchableOpacity>
-    </View>
+</View>
   );
 }
